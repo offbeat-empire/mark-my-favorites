@@ -1,0 +1,11 @@
+div.activity-meta span.ucc-mmf-container form {
+	display: inline;
+        font: normal 11px/20px Arial, Tahoma, Verdana, sans-serif;
+}
+
+div.activity-meta span.ucc-mmf-container input.ucc-mmf-favorite {
+        font: normal 11px Arial, Tahoma, Verdana, sans-serif;
+	padding: 4px 8px;
+	height: auto;
+	display: inline;
+}
