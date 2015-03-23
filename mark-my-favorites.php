@@ -331,7 +331,7 @@ class UCC_Mark_My_Favorites {
 		if(!function_exists('bp_activity_get_specific')) return;
 		if($mmf_skip_tick === true) return;
 
-		$activity_data = $this->get_object_id_from_activity_id();
+		$activity_data = $this->get_object_id_from_activity_id($activity_id);
 		extract($activity_data);
 
 		if ( empty( $object_id ) || empty( $object_ref ) )
