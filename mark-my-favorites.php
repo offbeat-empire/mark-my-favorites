@@ -453,7 +453,7 @@ class UCC_Mark_My_Favorites {
 		$vars = $this->get_object_id_from_activity_id($activities_template->activity->id);
 		extract($vars);
 
-		$relationship = ucc_uof_get_relationship($current_user->user_ID, 0, $object_id, $object_ref );
+		$relationship = ucc_uof_get_relationship($current_user->ID, 0, $object_id, $object_ref );
 		$meta_value = get_metadata( 'uof_user_object', $relationship, '_ucc_mmf_vote', true );
 
 		if ( $meta_value > 0 )
@@ -534,9 +534,7 @@ function ucc_mmf_init() {
 		global $current_user;
 		get_currentuserinfo();
 
-		if ( is_user_logged_in() && apply_filters( 'ucc_mmf_user_can', true, $current_user->user_ID ) ) {
-			// Ensure that native favorite does not run on AJAX queries.
-			//add_filter( 'bp_activity_can_favorite', '__return_false' );
+		if ( is_user_logged_in() && apply_filters( 'ucc_mmf_user_can', true, $current_user->ID ) ) {
 
 			load_plugin_textdomain( 'mark-my-favorites', null, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 			new UCC_Mark_My_Favorites;
