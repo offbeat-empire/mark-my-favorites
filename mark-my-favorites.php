@@ -46,7 +46,6 @@ class UCC_Mark_My_Favorites {
 		if ( ( ( is_admin() && defined('DOING_AJAX') && DOING_AJAX ) || ! is_admin() ) && is_user_logged_in() && apply_filters( 'ucc_mmf_auto_append', true ) ) {
 			// WordPress compat.
 			add_filter( 'the_content', array( $this, 'the_content' ), 15, 4 );
-			add_filter( 'the_excerpt', array( $this, 'the_excerpt' ), 999, 1 );
 			add_filter( 'comment_text', array( $this, 'comment_text' ), 15, 4 );
 
 			// BuddyPress compat.
